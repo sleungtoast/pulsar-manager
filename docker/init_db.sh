@@ -18,8 +18,4 @@
 # under the License.
 #
 
-initdb -D /data/postgresql
-pg_ctl -D /data/postgresql start
-createdb
-psql -f /pulsar-manager/init_db.sql
-
+PGPASSWORD=$PASSWORD psql -U $USERNAME -h `echo $URL | awk -F[/:] '{print $5}'` -v username=$USERNAME -v password=$PASSWORD -f /pulsar-manager/init_db.sql

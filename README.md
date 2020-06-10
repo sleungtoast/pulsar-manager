@@ -42,6 +42,7 @@ is able to talk to the brokers and bookies in your Pulsar cluster.
     docker pull apachepulsar/pulsar-manager:v0.1.0
     docker run -it \
         -p 9527:9527 \
+        -p 7750:7750 \
         -e REDIRECT_HOST=127.0.0.1 \
         -e REDIRECT_PORT=9527 \
         -e DRIVER_CLASS_NAME=org.postgresql.Driver \

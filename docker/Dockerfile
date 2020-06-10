@@ -61,7 +61,9 @@ COPY docker/supervisord-configuration-file.conf /etc/
 
 COPY docker/default.conf /etc/nginx/conf.d/
 
-COPY docker/startup.sh /pulsar-manager/
+COPY docker/start_postgres.sh /pulsar-manager/
+
+COPY docker/init_db.sh /pulsar-manager/
 
 COPY docker/init_db.sql /pulsar-manager/
 
